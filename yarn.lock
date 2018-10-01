@@ -5785,6 +5785,12 @@ react-event-listener@^0.6.2:
     prop-types "^15.6.0"
     warning "^4.0.1"
 
+react-form-validator-core@0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/react-form-validator-core/-/react-form-validator-core-0.5.0.tgz#dfb669bd9475b7dd1c275096f7f3414a6fb3077a"
+  dependencies:
+    react-lifecycles-compat "^3.0.2"
+
 react-jss@^8.1.0:
   version "8.6.1"
   resolved "https://registry.yarnpkg.com/react-jss/-/react-jss-8.6.1.tgz#a06e2e1d2c4d91b4d11befda865e6c07fbd75252"
@@ -5798,6 +5804,12 @@ react-jss@^8.1.0:
 react-lifecycles-compat@^3.0.2, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
+
+react-material-ui-form-validator@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-material-ui-form-validator/-/react-material-ui-form-validator-2.0.2.tgz#6e1f4178a556805e86561904dcf7a5a75371cec3"
+  dependencies:
+    react-form-validator-core "0.5.0"
 
 react-redux@^5.0.7:
   version "5.0.7"

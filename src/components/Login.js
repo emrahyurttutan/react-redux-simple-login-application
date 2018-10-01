@@ -9,10 +9,10 @@ import {
   LockIcon,
   Typography,
   FormControl,
-  InputLabel,
-  Input,
   User
 } from "../includes";
+import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
+
 import { connect } from "react-redux";
 import { userName, userPassword, userLoginSubmit } from "../includes/actions";
 import Snackbar from "./Snackbar";
@@ -68,12 +68,12 @@ class Login extends React.Component {
       this.props.onUserPasswordChange(event.target.value);
     }
   };
-  onSubmit() {
+  onSubmit(event) {
+    event.preventDefault();
     this.props.onLoginSubmit(
       this.props.login.username,
       this.props.login.password
     );
-    return false;
   }
 
   render() {
@@ -88,39 +88,46 @@ class Login extends React.Component {
               <LockIcon />
             </Avatar>
             <Typography variant="headline">Oturum Aç</Typography>
-            <form className={classes.form}>
+            <ValidatorForm
+              className={classes.form}
+              onSubmit={this.onSubmit.bind(this)}
+              onError={errors => console.log(errors)}
+            >
               <FormControl margin="normal" required fullWidth>
-                <InputLabel>Kullanıcı Adı</InputLabel>
-                <Input
-                  required={true}
+                <TextValidator
+                  label="Kullanıcı Adı"
+                  validators={["required"]}
                   name="username"
                   id="username"
                   value={this.props.login.username}
+                  errorMessages={["Bu alan gereklidir"]}
                   onChange={this.handleChange("username")}
                 />
               </FormControl>
               <FormControl margin="normal" required fullWidth>
-                <InputLabel htmlFor="password">Şifre</InputLabel>
-                <Input
-                  required={true}
+                <TextValidator
+                  label="Şifre"
                   name="password"
                   type="password"
+                  validators={["required"]}
+                  errorMessages={["Bu alan gereklidir"]}
                   id="password"
-                  autoComplete="current-password"
                   value={this.props.login.password}
+                  autoComplete="current-password"
                   onChange={this.handleChange("password")}
                 />
               </FormControl>
+
               <Button
                 fullWidth
                 variant="raised"
                 color="primary"
                 className={classes.submit}
-                onClick={this.onSubmit.bind(this)}
+                type="submit"
               >
                 Giriş Yap
               </Button>
-            </form>
+            </ValidatorForm>
           </Paper>
         </main>
       </React.Fragment>
