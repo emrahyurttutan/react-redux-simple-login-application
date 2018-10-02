@@ -1,11 +1,11 @@
 import { IS_LOGIN, USER_NAME, USER_PASSWORD } from "./action-type";
 import { pageLoading, alertError, alertSuccess } from "./alert-actions";
 import User from "../tools/user-service";
-export const userName = username => {
+export const userNameChange = username => {
   const type = USER_NAME;
   return { type, username };
 };
-export const userPassword = password => {
+export const userPasswordChange = password => {
   const type = USER_PASSWORD;
   return { type, password };
 };

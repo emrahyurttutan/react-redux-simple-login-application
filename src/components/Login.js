@@ -14,7 +14,11 @@ import {
 import { ValidatorForm, TextValidator } from "react-material-ui-form-validator";
 
 import { connect } from "react-redux";
-import { userName, userPassword, userLoginSubmit } from "../includes/actions";
+import {
+  userNameChange,
+  userPasswordChange,
+  userLoginSubmit
+} from "../includes/actions";
 import Snackbar from "./Snackbar";
 const styles = theme => ({
   layout: {
@@ -62,7 +66,7 @@ class Login extends React.Component {
     this.isLogin();
   }
   handleChange = name => event => {
-    if (name === "name") {
+    if (name === "username") {
       this.props.onUserNameChange(event.target.value);
     } else if (name === "password") {
       this.props.onUserPasswordChange(event.target.value);
@@ -145,8 +149,8 @@ const mapStateToProps = state => {
 
 //dispatchleri maplemeye yarar
 const mapDispatchToProps = {
-  onUserNameChange: userName,
-  onUserPasswordChange: userPassword,
+  onUserNameChange: userNameChange,
+  onUserPasswordChange: userPasswordChange,
   onLoginSubmit: userLoginSubmit
 };
 const stylesLogin = withStyles(styles)(Login);

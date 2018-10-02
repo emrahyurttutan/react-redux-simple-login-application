@@ -2,8 +2,8 @@
  * Actions includes
  */
 export {
-  userName,
-  userPassword,
+  userNameChange,
+  userPasswordChange,
   userLoginSubmit,
   userLogout
 } from "../actions/user-actions";
