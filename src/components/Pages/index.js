@@ -6,7 +6,7 @@ class Dashboard extends Component {
   render() {
     return (
       <Typography variant="display1" gutterBottom component="h2">
-        Anasayfa Elemna
+        Anasayfa Elemanları
       </Typography>
     );
   }

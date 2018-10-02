@@ -8,7 +8,9 @@ const composeEnhancers =
         // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
       })
     : compose;
-
+/**
+ * composeEnhancers redux devtools kullanırken
+ */
 const enhancer = composeEnhancers(
   applyMiddleware(thunk),
   applyMiddleware(logger)
